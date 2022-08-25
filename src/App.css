@@ -13,3 +13,20 @@
   color: white;
 }
 
+.container {
+  display: flex;
+  flex-direction:column;
+  
+}
+
+.singleGameDiv {
+  
+  width:20vw;
+  height:20vw;
+}
+
+.singleGameDiv h4 {
+  font-size: 1rem;
+  color: #282c34
+}
+
