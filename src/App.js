@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { getScores } from './helper';
 
 function App() {
+  const scores = getScores
+  if(scores.length === 0) {
+    return <div>Loading...</div>
+  } else {
+    console.log(scores)
+  }
+    
+    
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>MLB Scores</h1>
       </header>
+      <div className="container">
+        {/* {displayScores} */}
+      
+      
+      </div>
     </div>
   );
 }
