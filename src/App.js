@@ -3,15 +3,17 @@ import { useEffect, useState } from 'react';
 // import { getScores } from './helper';
 //import ScoreDisplay from './components/ScoreDisplay';
 
+
 function App() {
   const [scoresArray, setScoresArray] = useState([]);
   
   
   useEffect(() => {
+    const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'd825f6ccc4msh5c52f4fbeced2a9p13985fjsne7ef710dac4e',
+      'X-RapidAPI-Key': RapidAPIKey,
         'X-RapidAPI-Host': 'odds.p.rapidapi.com'
       }
     };
@@ -21,8 +23,6 @@ function App() {
     .catch(err => console.error(err))
   }
   , []);
-  console.log(scoresArray)
-  
   
 
   if(scoresArray.length > 0 ) {
