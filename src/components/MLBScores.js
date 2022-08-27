@@ -31,10 +31,16 @@ const MLBScores = (props) => {
       if(game !== null) {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <h4>{game[0].name}: {game[0].score} </h4>
-            <p>at</p>
-            <h4>{game[1].name}: {game[1].score}</h4>
-            
+            <div className='teamDiv'>
+              <h4>{game[0].name}</h4> 
+              <br></br>
+              <h4>{game[1].name}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{game[0].score} </h4>
+              <br></br>
+              <h4>{game[1].score}</h4>
+            </div>
           </div>
         )
       } else {

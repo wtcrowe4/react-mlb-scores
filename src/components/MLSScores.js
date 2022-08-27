@@ -31,7 +31,7 @@ const MLSScores = (props) => {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
             <h4>{game[0].name}: {game[0].score} </h4>
-            <p>at</p>
+            
             <h4>{game[1].name}: {game[1].score}</h4>
             
           </div>

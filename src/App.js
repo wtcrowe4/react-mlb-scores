@@ -16,9 +16,9 @@ function App(props) {
       </header>
       <div className="container">
         <MLBScores />
-        <NFLScores />
+        {/* <NFLScores />
         <NCAAScores />
-        <MLSScores />
+        <MLSScores /> */}
         {/* <NHLScores /> is currently not active */}
       </div>
     </div>

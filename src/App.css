@@ -21,13 +21,30 @@
 }
 
 .singleGameDiv {
+  display: flex;
+  flex-direction: row;
   border: 1px solid #282c34;
-  width:20vw;
-  height:14vw;
+  width: 19vw;
+  height: 16vh;
+  background-color: aliceblue;
+  
 }
 
 .singleGameDiv h4 {
-  font-size: 1rem;
-  color: #282c34
+  font-size: .8rem;
+  color: #282c34;
+  margin: 2px;
+  
 }
 
+.teamDiv {
+  text-align: left;
+  
+}
+
+.scoreDiv {
+  margin-left: 5vw;
+  text-align: right;
+  background-color: lightblue;
+  
+}
