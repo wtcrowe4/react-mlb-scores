@@ -13,16 +13,14 @@ const NFLScores = (props) => {
         'X-RapidAPI-Host': 'odds.p.rapidapi.com'
       }
     };
-    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl/scores?daysFrom=3', options)
+    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl_preseason/scores?daysFrom=3', options)
     .then(response => response.json())
     .then(response => setScoresArray(response))
     .catch(err => console.error(err))
   }, []);  
 
   if(scoresArray.length > 0 ) {
-    // const sport = scoresArray[0].sport_title
-    // const homeTeam = score.scores[0].name;
-    // const awayTeam = score.scores[1].name;
+   
     console.log(scoresArray)
     
     const displayScores = scoresArray.map(scoreArray => {

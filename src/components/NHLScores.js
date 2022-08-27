@@ -20,11 +20,7 @@ const NHLScores = (props) => {
   }, []);  
 
   if(scoresArray.length > 0 ) {
-    // const sport = scoresArray[0].sport_title
-    // const homeTeam = score.scores[0].name;
-    // const awayTeam = score.scores[1].name;
     console.log(scoresArray)
-    
     const displayScores = scoresArray.map(scoreArray => {
       //const displayStartTime = turn datetime into a readable time
       //const startTime = new Date(scoreArray.commence_time); 

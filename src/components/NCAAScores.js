@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 
-const MLSScores = (props) => {
+const NCAAScores = (props) => {
   const [scoresArray, setScoresArray] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const MLSScores = (props) => {
         'X-RapidAPI-Host': 'odds.p.rapidapi.com'
       }
     };
-    fetch('https://odds.p.rapidapi.com/v4/sports/soccer_usa_mls/scores?daysFrom=3', options)
+    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_ncaaf/scores?daysFrom=3', options)
     .then(response => response.json())
     .then(response => setScoresArray(response))
     .catch(err => console.error(err))
@@ -48,18 +48,18 @@ const MLSScores = (props) => {
  )
 
   return (
-    <div className="MLSscores">
-      <h2>MLS</h2>
+    <div className="NCAAScores">
+      <h2>NCAA Football</h2>
       {displayScores} 
     </div>
   )
   } else {
     return (
-      <div className="MLSscores">
+      <div className="NCAAScores">
         <p>Loading...</p>
       </div>
     )
   }
 }
 
-export default MLSScores;
+export default NCAAScores;
