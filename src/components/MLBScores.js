@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 
-const ScoreDisplayMLB = (props) => {
+const MLBScores = (props) => {
   const [scoresArray, setScoresArray] = useState([]);
 
   useEffect(() => {
@@ -52,6 +52,7 @@ const ScoreDisplayMLB = (props) => {
 
   return (
     <div className="MLBscores">
+      <h2>MLB</h2>
       {displayScores} 
     </div>
   )
@@ -64,7 +65,7 @@ const ScoreDisplayMLB = (props) => {
   }
 }
 
-export default ScoreDisplayMLB;
+export default MLBScores;
   
 
 
