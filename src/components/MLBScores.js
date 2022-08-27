@@ -21,12 +21,16 @@ const MLBScores = (props) => {
   }, []);  
 
   if(scoresArray.length > 0 ) {
- 
-    console.log(scoresArray)
-    
     const displayScores = scoresArray.map(scoreArray => {
-      //const displayStartTime = turn datetime into a readable time
-      //const startTime = new Date(scoreArray.commence_time); 
+      //Formatting the time
+      const startTime = new Date(scoreArray.commence_time);
+      const hour = startTime.getHours();
+      const minute = startTime.getMinutes();
+      const formattedMinute = minute < 10 ? `0${minute}` : minute;
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const formattedHour = hour % 12 || 12;
+      const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`;
+
       const game = scoreArray.scores
       if(game !== null) {
         return (
@@ -46,8 +50,14 @@ const MLBScores = (props) => {
       } else {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <p>{scoreArray.commence_time}</p>
-            <p>{scoreArray.away_team} @ {scoreArray.home_team}</p>
+            <div className='teamDiv'>
+              <h4>{scoreArray.away_team}</h4> 
+              <br></br>
+              <h4>{scoreArray.home_team}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{formattedTime}</h4>
+            </div>
           </div>
         )
       }

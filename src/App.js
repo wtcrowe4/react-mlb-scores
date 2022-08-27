@@ -1,9 +1,9 @@
 import './App.css';
 //import { useEffect, useState } from 'react';
 import MLBScores from './components/MLBScores';
-import NFLScores from './components/NFLScores';
-import NCAAScores from './components/NCAAScores';
-import MLSScores from './components/MLSScores';
+//import NFLScores from './components/NFLScores';
+//import NCAAScores from './components/NCAAScores';
+//import MLSScores from './components/MLSScores';
 //import NHLScores from './components/NHLScores';
 
 function App(props) {

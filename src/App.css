@@ -20,12 +20,18 @@
   
 }
 
+h2 {
+  font-size: 2rem;
+  color:#282c34;
+}
+
 .singleGameDiv {
   display: flex;
   flex-direction: row;
-  border: 1px solid #282c34;
-  width: 19vw;
-  height: 16vh;
+  justify-content: space-between;
+  border: 2px solid #282c34;
+  width: 18vw;
+  
   background-color: aliceblue;
   
 }
@@ -38,13 +44,19 @@
 }
 
 .teamDiv {
+  display: flex;
+  flex-direction: column;
   text-align: left;
+  justify-content: space-between;
+
   
 }
 
 .scoreDiv {
-  margin-left: 5vw;
-  text-align: right;
-  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(195, 203, 210);
+  width: 4vw;
   
 }
