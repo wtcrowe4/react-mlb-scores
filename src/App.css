@@ -15,7 +15,7 @@
 
 .container {
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
 
   
 }
@@ -23,6 +23,15 @@
 h2 {
   font-size: 2rem;
   color:#282c34;
+  width: 100%;
+}
+
+.MLBscores {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .singleGameDiv {
