@@ -4,7 +4,11 @@ import MLBScores from './MLBScores';
 
 const Scores = () => {
     return (
-        <MLBScores />
+        <div className="App">
+            <div className="container">
+                <MLBScores />
+            </div>
+        </div>
         // <Router>
         // <Routes>
         //     <Route path="/scores" element={<MLBScores />} />

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Components
 import Home from './components/Home';
 import Scores from './components/Scores';
+import Odds from './components/Odds';
 //import MLBScores from './components/MLBScores';
 // import NFLScores from './components/NFLScores';
 // import NCAAScores from './components/NCAAScores';
@@ -19,7 +20,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header" backgroundimage={background}>
-        <h1>Sports</h1>
+        <h1>Sports Book</h1>
       </header>
       {/* <img src={background} alt='splash' /> */}
       {/* <Navbar className="navbar">
@@ -50,13 +51,14 @@ function App(props) {
       </Tabs> */}
 
       <div className="container">
-       {/* <button onClick={}className='scoresbtn'>Go To Scores</button> */}
+       {/* <button onClick={}className='scoresbtn'>Go To Scores</button> */} 
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/scores" element={<Scores />} />
+            <Route path="/odds" element={<Odds />} />
           </Routes>
-        </Router>    
+        </Router>     
         
         
         {/*<MLBScores />

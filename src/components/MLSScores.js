@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import '../App.css';
 
 const MLSScores = (props) => {
   const [scoresArray, setScoresArray] = useState([]);
