@@ -1,5 +1,7 @@
 
 import { useState, useEffect } from 'react';
+//import Loading from '../Loading';
+
 
 
 const MLBScores = (props) => {
@@ -20,7 +22,7 @@ const MLBScores = (props) => {
     .catch(err => console.error(err))
   }, []);  
 
-  if(scoresArray.length > 0 ) {
+  // if(scoresArray.length > 0 ) {
     const displayScores = scoresArray.map(scoreArray => {
       //Formatting the time
       const startTime = new Date(scoreArray.commence_time);
@@ -71,15 +73,17 @@ const MLBScores = (props) => {
       {displayScores} 
     </div>
   )
-  } else {
-    return (
-      <div className="MLBscores">
-        <title>MLB Scores</title>
-        <p>Loading...</p>
-      </div>
-    )
-  }
+
+  // } else {
+  //   return (
+  //     <div className="MLBscores">
+  //       <title>MLB Scores</title>
+  //       <p>Loading...</p>
+  //     </div>
+  //   )
+  // }
 }
+
 
 export default MLBScores;
   
