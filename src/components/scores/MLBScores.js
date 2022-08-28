@@ -66,6 +66,7 @@ const MLBScores = (props) => {
 
   return (
     <div className="MLBscores">
+      <title>MLB Scores</title>
       <h2>MLB</h2>
       {displayScores} 
     </div>
@@ -73,6 +74,7 @@ const MLBScores = (props) => {
   } else {
     return (
       <div className="MLBscores">
+        <title>MLB Scores</title>
         <p>Loading...</p>
       </div>
     )

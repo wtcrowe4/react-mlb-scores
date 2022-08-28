@@ -1,12 +1,16 @@
 import '../App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MLBScores from './MLBScores';
+
+
 
 const Scores = () => {
     return (
         <div className="App">
             <div className="container">
-                <MLBScores />
+                <a href="/scores/mlbscores" className="scoreslink">Get MLB Scores</a>
+                <a href="/scores/nflscores" className="scoreslink">Get NFL Scores</a>
+                <a href="/scores/ncaascores" className="scoreslink">Get NCAA Scores</a>
+                <a href="/scores/mlsscores" className="scoreslink">Get MLS Scores</a>
+                <a href="/scores/nhlscores" className="scoreslink">Get NHL Scores</a>
             </div>
         </div>
         // <Router>

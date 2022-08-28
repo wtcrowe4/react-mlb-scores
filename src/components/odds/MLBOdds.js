@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../App.css';
+import '../../App.css'
 
 
 const MLBOdds = () => {
@@ -49,7 +49,7 @@ const MLBOdds = () => {
              
                     <div className='singleGameDiv' key={oddsArray.id}>
                         <h4>{formattedTime}</h4>
-                        <h4>{bookmaker}</h4>
+                        {/* <h4>{bookmaker}</h4> */}
                         <div className='teamDiv'>
                             <h4>{oddsArray.away_team}</h4> 
                             <br></br>
@@ -68,14 +68,16 @@ const MLBOdds = () => {
             }
         )
     return (
-        <div className='MLBOdds'>
+        <div className='MLBScores'>
+            <title>MLB Odds</title>
             <h2>MLB Odds</h2>
             {displayOdds}
         </div>
     )
 } else {
     return (
-        <div className='MLBOdds'>
+        <div className='MLBScores'>
+            <title>MLB Odds</title>
             <h2>MLB</h2>
             <p>Loading...</p>
         </div>

@@ -9,14 +9,16 @@ import Scores from './Scores';
 const Home = () => {
     return (
         <div className="App">
-            <div className="container">
-                <img src={background} alt='splash' />
-                <button className="scoresbtn">
+              <button className="scoresbtn">
                     <a href="/scores" className="scoreslink">Get Scores</a>
                 </button>
                 <button className="oddsbtn">
                     <a href="/odds" className="oddslink">Get Odds</a>
                 </button>
+            <div className="container">
+                
+                <img src={background} alt='splash' />
+              
             </div>
         </div>
     )

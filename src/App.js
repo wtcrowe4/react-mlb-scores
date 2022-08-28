@@ -8,11 +8,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Scores from './components/Scores';
 import Odds from './components/Odds';
-//import MLBScores from './components/MLBScores';
-// import NFLScores from './components/NFLScores';
-// import NCAAScores from './components/NCAAScores';
-// import MLSScores from './components/MLSScores';
-// import NHLScores from './components/NHLScores';
+import MLBOdds from './components/odds/MLBOdds';
+import NFLOdds from './components/odds/NFLOdds';
+import NCAAOdds from './components/odds/NCAAOdds';
+import MLSOdds from './components/odds/MLSOdds';
+import NHLOdds from './components/odds/NHLOdds';
+import MLBScores from './components/scores/MLBScores';
+import NFLScores from './components/scores/NFLScores';
+import NCAAScores from './components/scores/NCAAScores';
+import MLSScores from './components/scores/MLSScores';
+import NHLScores from './components/scores/NHLScores';
 
 function App(props) {
    
@@ -57,6 +62,16 @@ function App(props) {
             <Route path="/" element={<Home />} />
             <Route path="/scores" element={<Scores />} />
             <Route path="/odds" element={<Odds />} />
+            <Route path ="/odds/mlbodds" element={<MLBOdds />} />
+            <Route path="/odds/nflodds" element={<NFLOdds />} />
+            <Route path="/odds/ncaaodds" element={<NCAAOdds />} />
+            <Route path="/odds/mlsodds" element={<MLSOdds />} />
+            <Route path="/odds/nhlodds" element={<NHLOdds />} />
+            <Route path="/scores/mlbscores" element={<MLBScores />} />
+            <Route path="/scores/nflscores" element={<NFLScores />} />
+            <Route path="/scores/ncaascores" element={<NCAAScores />} />
+            <Route path="/scores/mlsscores" element={<MLSScores />} />
+            <Route path="/scores/nhlscores" element={<NHLScores />} />
           </Routes>
         </Router>     
         
