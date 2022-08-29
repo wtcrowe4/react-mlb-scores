@@ -51,7 +51,7 @@ button .scoreslink, button .oddslink {
   margin-right: 1rem;
 }
 
-.MLBscores {
+.displayDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -68,7 +68,7 @@ const MLBOdds = () => {
             }
         )
     return (
-        <div className='MLBScores'>
+        <div className='displayDiv'>
             <title>MLB Odds</title>
             <h2>MLB Odds</h2>
             {displayOdds}
@@ -76,7 +76,7 @@ const MLBOdds = () => {
     )
 } else {
     return (
-        <div className='MLBScores'>
+        <div className='displayDiv'>
             <title>MLB Odds</title>
             <h2>MLB</h2>
             <p>Loading...</p>
