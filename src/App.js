@@ -9,11 +9,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Scores from './components/Scores';
 import Odds from './components/Odds';
+
 import MLBOdds from './components/odds/MLBOdds';
 import NFLOdds from './components/odds/NFLOdds';
 import NCAAOdds from './components/odds/NCAAOdds';
 import MLSOdds from './components/odds/MLSOdds';
 import NHLOdds from './components/odds/NHLOdds';
+
 import MLBScores from './components/scores/MLBScores';
 import NFLScores from './components/scores/NFLScores';
 import NCAAScores from './components/scores/NCAAScores';

@@ -1,7 +1,10 @@
+
+
+
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'd825f6ccc4msh5c52f4fbeced2a9p13985fjsne7ef710dac4e',
+		'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
 		'X-RapidAPI-Host': 'odds.p.rapidapi.com'
 	}
 };
