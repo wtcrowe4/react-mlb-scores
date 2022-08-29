@@ -1,54 +1,19 @@
-//import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 //create a helper file to store fetch functions
-
-
-const helper = {
-	  //create a helper function to fetch the data from the API
-	  fetchScores: async (url) => {	
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-
-	  fetchOdds: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchMLB: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchNFL: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchNBA: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchNHL: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchMLS: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  },
-	  fetchNCAA: async (url) => {
-		const response = await fetch(url);
-		const data = await response.json();
-		return data;
-	  }
-	}
+//create variables to determine odds or scores
 
 
 
+const helper = () => {
+	// const state = useState()
+	// const sport = state.sport
+	// const oddsURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/odds?daysFrom=3`  
+	// const scoresURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/scores?daysFrom=3`
+	
+	
+
+
+}
 
 // const options = {
 // 	method: 'GET',

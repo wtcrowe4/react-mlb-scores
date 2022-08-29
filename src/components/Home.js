@@ -1,10 +1,5 @@
 import '../App.css';
-import background from '../splash.jpg';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Scores from './Scores';
-
+import background from '../images/splash.jpg';
 
 const Home = () => {
     return (
