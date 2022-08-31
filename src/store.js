@@ -7,7 +7,8 @@ export const store = configureStore({
         data: dataReducer,
         scores: dataReducer,
         odds: dataReducer,
-        sport: dataReducer
+        sport: dataReducer,
+        daysFrom: dataReducer,
     }
     , middleware: [logger]
 });

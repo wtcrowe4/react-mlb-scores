@@ -42,7 +42,7 @@ const MLBOdds = () => {
             // )
             // console.log(bookmakers)
             
-            const bookmaker = oddsArray.bookmakers[0].title
+            //const bookmaker = oddsArray.bookmakers[0].title
             const homeOdds = oddsArray.bookmakers[0].markets[1].outcomes[0].point
             const awayOdds = oddsArray.bookmakers[0].markets[1].outcomes[1].point
                 return (

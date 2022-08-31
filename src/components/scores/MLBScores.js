@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 //import Loading from '../Loading';
-
+import baseballStadium from '../../images/baseball.jpg';
 
 
 const MLBScores = (props) => {
@@ -67,10 +67,11 @@ const MLBScores = (props) => {
  )
 
   return (
-    <div className="displayDiv">
+    <div className="displayDiv" backgroundImage={baseballStadium}>
       <title>MLB Scores</title>
       <h2>MLB</h2>
-      {displayScores} 
+      {displayScores}
+      <img src={baseballStadium} alt="baseball stadium" style={{width: '250vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
 

@@ -1,5 +1,5 @@
 import './App.css';
-import background from './splash.jpg';
+import background from './images/splash.jpg';
 
 //import { useEffect, useState } from 'react';
 //import { Nav, Navbar, Tab, Tabs } from 'react-bootstrap';
