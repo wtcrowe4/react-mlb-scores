@@ -13,7 +13,7 @@ const NFLScores = (props) => {
         'X-RapidAPI-Host': 'odds.p.rapidapi.com'
       }
     };
-    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl_preseason/scores?daysFrom=3', options)
+    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl/scores?daysFrom=3', options)
     .then(response => response.json())
     .then(response => setScoresArray(response))
     .catch(err => console.error(err))
@@ -24,23 +24,40 @@ const NFLScores = (props) => {
     console.log(scoresArray)
     
     const displayScores = scoresArray.map(scoreArray => {
-      //const displayStartTime = turn datetime into a readable time
-      //const startTime = new Date(scoreArray.commence_time); 
+      const startTime = new Date(scoreArray.commence_time);
+      const hour = startTime.getHours();
+      const minute = startTime.getMinutes();
+      const formattedMinute = minute < 10 ? `0${minute}` : minute;
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const formattedHour = hour % 12 || 12;
+      const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`; 
       const game = scoreArray.scores
       if(game !== null) {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <h4>{game[0].name}: {game[0].score} </h4>
-            
-            <h4>{game[1].name}: {game[1].score}</h4>
-            
+            <div className='teamDiv'>
+              <h4>{game[0].name}: {game[0].score} </h4>
+              <br></br>
+              <h4>{game[1].name}: {game[1].score}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{game[0].score}</h4>
+              <br></br>
+              <h4>{game[1].score}</h4>
+            </div>
           </div>
         )
       } else {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <p>{scoreArray.commence_time}</p>
-            <p>{scoreArray.away_team} @ {scoreArray.home_team}</p>
+            <div className='teamDiv'>
+              <h4>{scoreArray.away_team}</h4>  
+              <br></br>
+              <h4>{scoreArray.home_team}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{formattedTime}</h4>
+            </div>  
           </div>
         )
       }
@@ -48,14 +65,14 @@ const NFLScores = (props) => {
  )
 
   return (
-    <div className="NFLscores">
+    <div className="displayDiv">
       <h2>NFL</h2>
       {displayScores} 
     </div>
   )
   } else {
     return (
-      <div className="NFLscores">
+      <div className="displayDiv">
         <p>Loading...</p>
       </div>
     )

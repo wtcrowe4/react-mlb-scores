@@ -67,11 +67,11 @@ const MLBScores = (props) => {
  )
 
   return (
-    <div className="displayDiv" backgroundImage={baseballStadium}>
+    <div className='displayDiv'>
       <title>MLB Scores</title>
       <h2>MLB</h2>
       {displayScores}
-      <img src={baseballStadium} alt="baseball stadium" style={{width: '250vw', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={baseballStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
 

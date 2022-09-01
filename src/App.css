@@ -13,6 +13,14 @@
   color: white;
 }
 
+.navlink {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
+.navlink:hover {
+  color: #85c7f3;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -55,8 +63,10 @@ button .scoreslink, button .oddslink {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex-shrink: 3;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .singleGameDiv {
