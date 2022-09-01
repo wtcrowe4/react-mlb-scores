@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../../App.css'
-
+import baseballStadium from '../../images/baseball.jpg';
 
 const MLBOdds = () => {
     const [oddsArray, setOddsArray] = useState([]);
@@ -31,6 +31,11 @@ const MLBOdds = () => {
             const ampm = hour >= 12 ? 'PM' : 'AM';
             const formattedHour = hour % 12 || 12;
             const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`;
+            //Getting the date
+            const date = new Date(oddsArray.commence_time);
+            const day = date.getDate();
+            const month = date.getMonth();
+            
             //Get bookmaker and odds
             // const bookmakers = oddsArray.bookmakers.map(bookmaker => {
             //     const bookie = bookmaker.title
@@ -43,12 +48,39 @@ const MLBOdds = () => {
             // console.log(bookmakers)
             
             //const bookmaker = oddsArray.bookmakers[0].title
+            if (oddsArray.bookmakers[0].markets[1] === undefined) {
+                const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
+                const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
+                return (
+                    <div className='singleGameDiv' key={oddsArray.id}>
+                        <div className='dateDiv'>
+                            <h4>{formattedTime}</h4>
+                            <h4>{month}/{day}</h4>
+                        </div>
+                        <div className='teamDiv'>
+                            <h4>{oddsArray.away_team}</h4>
+                            <br></br>
+                            <h4>{oddsArray.home_team}</h4>
+                        </div>
+                        <div className='scoreDiv'>
+                            <h4>{awayOdds}</h4>
+                            <br></br>
+                            <h4>{homeOdds}</h4>
+                        </div>
+                    </div>
+                )
+
+            } else{
             const homeOdds = oddsArray.bookmakers[0].markets[1].outcomes[0].point
             const awayOdds = oddsArray.bookmakers[0].markets[1].outcomes[1].point
-                return (
+            
+            return (
              
                     <div className='singleGameDiv' key={oddsArray.id}>
-                        <h4>{formattedTime}</h4>
+                        <div className='dateDiv'>
+                            <h4>{formattedTime}</h4>
+                            <h4>{month}/{day}</h4>
+                        </div>
                         {/* <h4>{bookmaker}</h4> */}
                         <div className='teamDiv'>
                             <h4>{oddsArray.away_team}</h4> 
@@ -66,12 +98,14 @@ const MLBOdds = () => {
                     
                 )
             }
+        }
         )
     return (
         <div className='displayDiv'>
             <title>MLB Odds</title>
             <h2>MLB Odds</h2>
             {displayOdds}
+            <img src={baseballStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
         </div>
     )
 } else {

@@ -32,11 +32,18 @@ const MLBScores = (props) => {
       const ampm = hour >= 12 ? 'PM' : 'AM';
       const formattedHour = hour % 12 || 12;
       const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`;
+      //Getting the date
+      const date = new Date(scoreArray.commence_time);
+      const day = date.getDate();
+      const month = date.getMonth();
+
+
 
       const game = scoreArray.scores
       if(game !== null) {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
+            <h4>{month}/{day}</h4>
             <div className='teamDiv'>
               <h4>{game[0].name}</h4> 
               <br></br>
@@ -52,6 +59,7 @@ const MLBScores = (props) => {
       } else {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
+            <h4>{month}/{day}</h4>
             <div className='teamDiv'>
               <h4>{scoreArray.away_team}</h4> 
               <br></br>
@@ -59,6 +67,8 @@ const MLBScores = (props) => {
             </div>
             <div className='scoreDiv'>
               <h4>{formattedTime}</h4>
+              
+              
             </div>
           </div>
         )
