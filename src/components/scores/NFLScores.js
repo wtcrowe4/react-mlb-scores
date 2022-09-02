@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import nflStadium from '../../images/nfl.jpg'
 
 const NFLScores = (props) => {
   const [scoresArray, setScoresArray] = useState([]);
@@ -68,6 +68,7 @@ const NFLScores = (props) => {
     <div className="displayDiv">
       <h2>NFL</h2>
       {displayScores} 
+      <img src={nflStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {
