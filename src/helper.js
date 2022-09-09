@@ -6,7 +6,7 @@ import axios from 'axios'
 const Helper = () => {
 	const state = useState({ data: [], scores: [], odds: [], sport: '', daysFrom: 3 });
 	const sport = state.sport
-	const daysFrom = state.daysFrom
+	//const daysFrom = state.daysFrom  (Must be 1-3)
 	const oddsURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/odds?daysFrom=3`  
 	const scoresURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/scores?daysFrom=3`
 	const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY 

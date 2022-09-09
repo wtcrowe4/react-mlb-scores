@@ -34,18 +34,7 @@ const NCAAOdds = () => {
             const day = date.getDate();
             const month = date.getMonth();
             
-            //Get bookmaker and odds
-            // const bookmakers = oddsArray.bookmakers.map(bookmaker => {
-            //     const bookie = bookmaker.title
-            //     console.log(bookie)
-            //     return bookie
-            // }
-            
-            
-            // )
-            // console.log(bookmakers)
-            
-            //const bookmaker = oddsArray.bookmakers[0].title
+         
             if (oddsArray.bookmakers[0].markets[1] === undefined) {
                 const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
                 const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
