@@ -34,12 +34,7 @@ const NCAAOdds = () => {
             const day = date.getDate();
             const month = date.getMonth();
             
-         
-            if (oddsArray.bookmakers[0].markets[1] === undefined) {
-                const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
-                const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
-                console.log(homeOdds)
-                console.log(awayOdds)
+            if (oddsArray.bookmakers[0] === undefined) {
                 return (
                     <div className='singleGameDiv' key={oddsArray.id}>
                         <div className='dateDiv'>
@@ -52,13 +47,58 @@ const NCAAOdds = () => {
                             <h4>{oddsArray.home_team}</h4>
                         </div>
                         <div className='scoreDiv'>
-                            <h4>{awayOdds}</h4>
+                            <h4>NO ODDS</h4>
                             <br></br>
-                            <h4>{homeOdds}</h4>
+                            <h4>NO ODDS</h4>
                         </div>
                     </div>
                 )
+            } else {
+            if (oddsArray.bookmakers[0].markets[1] === undefined) {
+                const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
+                const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
+                console.log(homeOdds)
+                console.log(awayOdds)
+                if (homeOdds === undefined || awayOdds === undefined) {
+                    return (
+                        <div className='singleGameDiv' key={oddsArray.id}>
+                            <div className='dateDiv'>
+                                <h4>{formattedTime}</h4>
+                                <h4>{month}/{day}</h4>
+                            </div>
+                            <div className='teamDiv'>
+                                <h4>{oddsArray.away_team}</h4>
+                                <br></br>
+                                <h4>{oddsArray.home_team}</h4>
+                            </div>
+                            <div className='scoreDiv'>
+                                <h4>Not Available</h4>
+                                <br></br>
+                                <h4>Not Available</h4>
+                            </div>
+                        </div>
+                    )
+                } else {
 
+                    return (
+                        <div className='singleGameDiv' key={oddsArray.id}>
+                            <div className='dateDiv'>
+                                <h4>{formattedTime}</h4>
+                                <h4>{month}/{day}</h4>
+                            </div>
+                            <div className='teamDiv'>
+                                <h4>{oddsArray.away_team}</h4>
+                                <br></br>
+                                <h4>{oddsArray.home_team}</h4>
+                            </div>
+                            <div className='scoreDiv'>
+                                <h4>{awayOdds}</h4>
+                                <br></br>
+                                <h4>{homeOdds}</h4>
+                            </div>
+                        </div>
+                    )
+                }
             } else{
             const homeOdds = oddsArray.bookmakers[0].markets[1].outcomes[0].point
             const awayOdds = oddsArray.bookmakers[0].markets[1].outcomes[1].point
@@ -88,7 +128,7 @@ const NCAAOdds = () => {
                 )
             }
         }
-        )
+        })
     return (
         <div className='displayDiv'>
             <title>NCAA Odds</title>
