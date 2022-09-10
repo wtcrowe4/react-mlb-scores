@@ -38,6 +38,8 @@ const NCAAOdds = () => {
             if (oddsArray.bookmakers[0].markets[1] === undefined) {
                 const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
                 const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
+                console.log(homeOdds)
+                console.log(awayOdds)
                 return (
                     <div className='singleGameDiv' key={oddsArray.id}>
                         <div className='dateDiv'>
