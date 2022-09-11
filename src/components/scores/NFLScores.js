@@ -21,8 +21,6 @@ const NFLScores = (props) => {
 
   if(scoresArray.length > 0 ) {
    
-    console.log(scoresArray)
-    
     const displayScores = scoresArray.map(scoreArray => {
       const startTime = new Date(scoreArray.commence_time);
       const hour = startTime.getHours();
@@ -31,6 +29,10 @@ const NFLScores = (props) => {
       const ampm = hour >= 12 ? 'PM' : 'AM';
       const formattedHour = hour % 12 || 12;
       const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`; 
+      //date not working
+      const date = new Date(scoresArray.commence_time);
+      const day = date.getDate();
+      const month = date.getMonth();
       const game = scoreArray.scores
       if(game !== null) {
         return (
@@ -57,6 +59,8 @@ const NFLScores = (props) => {
             </div>
             <div className='scoreDiv'>
               <h4>{formattedTime}</h4>
+              <br></br>
+              <h4>{month}/{day}</h4>
             </div>  
           </div>
         )
@@ -68,7 +72,7 @@ const NFLScores = (props) => {
     <div className="displayDiv">
       <h2>NFL</h2>
       {displayScores} 
-      <img src={nflStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={nflStadium} alt="football stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {
