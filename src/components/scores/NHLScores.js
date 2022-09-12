@@ -22,23 +22,51 @@ const NHLScores = (props) => {
   if(scoresArray.length > 0 ) {
     console.log(scoresArray)
     const displayScores = scoresArray.map(scoreArray => {
-      //const displayStartTime = turn datetime into a readable time
-      //const startTime = new Date(scoreArray.commence_time); 
+      const startTime = new Date(scoreArray.commence_time);
+      const hour = startTime.getHours();
+      const minute = startTime.getMinutes();
+      const formattedMinute = minute < 10 ? `0${minute}` : minute;
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const formattedHour = hour % 12 || 12;
+      const formattedTime = `${formattedHour}:${formattedMinute} ${ampm}`;
+      //Getting the date
+      const date = new Date(scoreArray.commence_time);
+      const day = date.getDate();
+      const month = date.getMonth();
+
+
+
       const game = scoreArray.scores
       if(game !== null) {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <h4>{game[0].name}: {game[0].score} </h4>
-            
-            <h4>{game[1].name}: {game[1].score}</h4>
-            
+            <h4>{month}/{day}</h4>
+            <div className='teamDiv'>
+              <h4>{game[0].name}</h4> 
+              <br></br>
+              <h4>{game[1].name}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{game[0].score} </h4>
+              <br></br>
+              <h4>{game[1].score}</h4>
+            </div>
           </div>
         )
       } else {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
-            <p>{scoreArray.commence_time}</p>
-            <p>{scoreArray.away_team} @ {scoreArray.home_team}</p>
+            <h4>{month}/{day}</h4>
+            <div className='teamDiv'>
+              <h4>{scoreArray.away_team}</h4> 
+              <br></br>
+              <h4>{scoreArray.home_team}</h4>
+            </div>
+            <div className='scoreDiv'>
+              <h4>{formattedTime}</h4>
+              
+              
+            </div>
           </div>
         )
       }
@@ -46,14 +74,17 @@ const NHLScores = (props) => {
  )
 
   return (
-    <div className="NHLScores">
+    <div className='displayDiv'>
+      <title>NHL Scores</title>
       <h2>NHL</h2>
-      {displayScores} 
+      {displayScores}
     </div>
   )
+
   } else {
     return (
-      <div className="NHLScores">
+      <div className="NHLscores">
+        <title>NHL Scores</title>
         <p>Loading...</p>
       </div>
     )
