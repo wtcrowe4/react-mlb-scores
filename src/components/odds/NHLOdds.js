@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-//import baseballStadium from '../../images/baseball.jpg';
+import hockeyStadium from '../../images/hockey.webp';
 
 const NHLOdds = () => {
     const [oddsArray, setOddsArray] = useState([]);
@@ -37,8 +37,8 @@ const NHLOdds = () => {
             const month = date.getMonth();
             
            if (oddsArray.bookmakers[0].markets[1] === undefined) {
-                const homeOdds = oddsArray.bookmakers[0].markets[0].outcomes[0].point
-                const awayOdds = oddsArray.bookmakers[0].markets[0].outcomes[1].point
+                const homeOdds = oddsArray.bookmakers[1].markets[0].outcomes[0].point
+                const awayOdds = oddsArray.bookmakers[1].markets[0].outcomes[1].point
                 return (
                     <div className='singleGameDiv' key={oddsArray.id}>
                         <div className='dateDiv'>
@@ -59,8 +59,8 @@ const NHLOdds = () => {
                 )
 
             } else{
-            const homeOdds = oddsArray.bookmakers[0].markets[1].outcomes[0].point
-            const awayOdds = oddsArray.bookmakers[0].markets[1].outcomes[1].point
+            const homeOdds = oddsArray.bookmakers[1].markets[1].outcomes[0].point
+            const awayOdds = oddsArray.bookmakers[1].markets[1].outcomes[1].point
             
             return (
              
@@ -93,7 +93,7 @@ const NHLOdds = () => {
             <title>NHL Odds</title>
             <h2>NHL Odds</h2>
             {displayOdds}
-            
+            <img src={hockeyStadium} alt="hockey stadium" style={{height: '180vh', position: 'absolute', zIndex: '-1'}} /> 
         </div>
     )
 } else {

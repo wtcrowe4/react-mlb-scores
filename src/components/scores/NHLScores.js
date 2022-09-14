@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import hockeyStadium from '../../images/hockey.webp';
 
 const NHLScores = (props) => {
   const [scoresArray, setScoresArray] = useState([]);
@@ -78,6 +78,7 @@ const NHLScores = (props) => {
       <title>NHL Scores</title>
       <h2>NHL</h2>
       {displayScores}
+      <img src={hockeyStadium} alt="hockey stadium" style={{height: '180vh', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
 
