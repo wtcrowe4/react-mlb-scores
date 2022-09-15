@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import fetchData from '../../Helper.js'
 //import Loading from '../Loading';
 import baseballStadium from '../../images/baseball.jpg';
 
@@ -20,8 +21,9 @@ const MLBScores = (props) => {
     .then(response => response.json())
     .then(response => setScoresArray(response))
     .catch(err => console.error(err))
+    
   }, []);  
-
+  //setScoresArray(fetchData());
   // if(scoresArray.length > 0 ) {
     const displayScores = scoresArray.map(scoreArray => {
       //Formatting the time
