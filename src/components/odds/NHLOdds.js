@@ -93,7 +93,7 @@ const NHLOdds = () => {
             <title>NHL Odds</title>
             <h2>NHL Odds</h2>
             {displayOdds}
-            <img src={hockeyStadium} alt="hockey stadium" style={{height: '180vh', position: 'absolute', zIndex: '-1'}} /> 
+            <img src={hockeyStadium} alt="hockey stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
         </div>
     )
 } else {

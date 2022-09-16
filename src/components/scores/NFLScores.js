@@ -72,7 +72,7 @@ const NFLScores = (props) => {
     <div className="displayDiv">
       <h2>NFL</h2>
       {displayScores} 
-      <img src={nflStadium} alt="football stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={nflStadium} alt="football stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {

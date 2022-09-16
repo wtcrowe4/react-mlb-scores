@@ -23,7 +23,8 @@ const MLBScores = (props) => {
     .catch(err => console.error(err))
     
   }, []);  
-  //setScoresArray(fetchData());
+    //const scoresArray = fetchData();
+  
   // if(scoresArray.length > 0 ) {
     const displayScores = scoresArray.map(scoreArray => {
       //Formatting the time
@@ -38,10 +39,8 @@ const MLBScores = (props) => {
       const date = new Date(scoreArray.commence_time);
       const day = date.getDate();
       const month = date.getMonth();
-
-
-
       const game = scoreArray.scores
+    
       if(game !== null) {
         return (
           <div className='singleGameDiv' key={scoreArray.id}>
@@ -83,7 +82,7 @@ const MLBScores = (props) => {
       <title>MLB Scores</title>
       <h2>MLB</h2>
       {displayScores}
-      <img src={baseballStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={baseballStadium} alt="baseball stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
 
@@ -96,6 +95,8 @@ const MLBScores = (props) => {
   //   )
   // }
 }
+
+
 
 
 export default MLBScores;

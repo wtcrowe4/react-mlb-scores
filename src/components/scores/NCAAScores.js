@@ -77,7 +77,7 @@ const NCAAScores = (props) => {
     <div className="displayDiv">
       <h2>NCAA Football</h2>
       {displayScores} 
-      <img src="https://clemsontigers.com/wp-content/uploads/2018/07/08.31.13.death_.valley.stadium.clemson.1-e1469397100117.jpg" alt="baseball stadium" style={{height: '200vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src="https://clemsontigers.com/wp-content/uploads/2018/07/08.31.13.death_.valley.stadium.clemson.1-e1469397100117.jpg" alt="baseball stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {

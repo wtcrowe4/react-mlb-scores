@@ -73,7 +73,7 @@ const MLSScores = (props) => {
     <div className="displayDiv">
       <h2>MLS</h2>
       {displayScores} 
-      <img src={soccerStadium} alt="soccer stadium" style={{height: '140vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={soccerStadium} alt="soccer stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {

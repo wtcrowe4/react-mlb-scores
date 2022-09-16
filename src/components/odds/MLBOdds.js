@@ -93,7 +93,7 @@ const MLBOdds = () => {
             <title>MLB Odds</title>
             <h2>MLB Odds</h2>
             {displayOdds}
-            <img src={baseballStadium} alt="baseball stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
+            <img src={baseballStadium} alt="baseball stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
         </div>
     )
 } else {

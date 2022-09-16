@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../../App.css'
-
+import soccerStadium from '../../images/soccer.jpg'
 
 const MLBOdds = () => {
     const [oddsArray, setOddsArray] = useState([]);
@@ -68,15 +68,17 @@ const MLBOdds = () => {
             }
         )
     return (
-        <div className='MLBScores'>
+        <div className='displayDiv'>
             <title>MLS Odds</title>
             <h2>MLS Odds</h2>
             {displayOdds}
+            <img src={soccerStadium} alt="soccer stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
+
         </div>
     )
 } else {
     return (
-        <div className='MLBScores'>
+        <div className='displayDiv'>
             <title>MLS Odds</title>
             <h2>MLS</h2>
             <p>Loading...</p>

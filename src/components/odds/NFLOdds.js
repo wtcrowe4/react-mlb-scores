@@ -93,7 +93,7 @@ const NFLOdds = () => {
             <title>NFL Odds</title>
             <h2>NFL Odds</h2>
             {displayOdds}
-            <img src={nflStadium} alt="nfl stadium" style={{height: '120vh', position: 'absolute', zIndex: '-1'}} /> 
+            <img src={nflStadium} alt="nfl stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
         </div>
     )
 } else {

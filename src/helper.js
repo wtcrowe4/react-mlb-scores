@@ -4,37 +4,43 @@ import axios from 'axios'
 
 
 const Helper = (props) => {
-	//const state = useState({ data: [], scores: [], odds: [], sport: '', daysFrom: 3 });
-	//const sport = state.sport
-	const sport = 'baseball_mlb'
-	//const daysFrom = state.daysFrom  (Must be 1-3)
-	const oddsURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/odds?daysFrom=3`  
-	const scoresURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/scores?daysFrom=3`
-	const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY 
-	const API = {
-		method: 'GET',
-		headers: {	
-			'X-RapidAPI-Key': RapidAPIKey,
-			'X-RapidAPI-Host': 'odds.p.rapidapi.com'
-		},
-		params: {
-			daysFrom: 'daysFrom'
-	 	},
-	 	url:  oddsURL || scoresURL 
-	}
-	const fetchData = async () => {
-		const response = await axios(API)
-		return response.data
+	
+		//const state = useState({ data: [], scores: [], odds: [], sport: '', daysFrom: 3 });
+		//const sport = state.sport
+		const sport = 'baseball_mlb'
+		//const daysFrom = state.daysFrom  (Must be 1-3)
+		const oddsURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/odds?daysFrom=3`  
+		const scoresURL = `https://odds.p.rapidapi.com/v4/sports/${sport}/scores?daysFrom=3`
+		const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY 
+		const API = {
+			method: 'GET',
+			headers: {	
+				'X-RapidAPI-Key': RapidAPIKey,
+				'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+			},
+			params: {
+				daysFrom: 'daysFrom'
+			},
+			url:  oddsURL || scoresURL 
+		}
+		const fetchData = async () => {
+			const response = await axios(API)
+			return response.data
+		}
+
+		axios.request(API).then(response => {
+			console.log(response)
+		}).catch(err => {	
+			console.log(err)
+		}, [])
+
+		return fetchData;
+	
 	}
 
-	axios.request(API).then(response => {
-		console.log(response)
-	}).catch(err => {	
-		console.log(err)
-	}, [])
+	
 
-	return fetchData
-}
+	
 
 
 

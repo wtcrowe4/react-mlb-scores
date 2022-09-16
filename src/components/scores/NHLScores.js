@@ -78,7 +78,7 @@ const NHLScores = (props) => {
       <title>NHL Scores</title>
       <h2>NHL</h2>
       {displayScores}
-      <img src={hockeyStadium} alt="hockey stadium" style={{height: '180vh', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={hockeyStadium} alt="hockey stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
 
