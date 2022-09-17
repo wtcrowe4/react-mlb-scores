@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import fetchData from '../../Helper.js'
+
 //import Loading from '../Loading';
 import baseballStadium from '../../images/baseball.jpg';
 

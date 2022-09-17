@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createResource } from '../../Helper';
 
 import baseballStadium from '../../images/baseball.jpg';
 
@@ -6,18 +7,19 @@ const MLBOdds = () => {
     const [oddsArray, setOddsArray] = useState([]);
 
     useEffect(() => {
-        const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY
-        const options = {
-            method: 'GET',
-            headers: {
-            'X-RapidAPI-Key': RapidAPIKey,
-              'X-RapidAPI-Host': 'odds.p.rapidapi.com'
-            }
-        };
-        fetch('https://odds.p.rapidapi.com/v4/sports/baseball_mlb/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', options)
-        .then(response => response.json())
-        .then(response => setOddsArray(response))
-        .catch(err => console.error(err))
+        // const RapidAPIKey = process.env.REACT_APP_RAPIDAPIKEY
+        // const options = {
+        //     method: 'GET',
+        //     headers: {
+        //     'X-RapidAPI-Key': RapidAPIKey,
+        //       'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+        //     }
+        // };
+        // fetch('https://odds.p.rapidapi.com/v4/sports/baseball_mlb/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', options)
+        // .then(response => response.json())
+        // .then(response => setOddsArray(response))
+        // .catch(err => console.error(err))
+         setOddsArray(createResource('baseball_mlb'))
     }, []);
 
     if(oddsArray.length > 0 ) {
