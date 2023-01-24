@@ -32,7 +32,7 @@ const NHLScores = (props) => {
       //Getting the date
       const date = new Date(scoreArray.commence_time);
       const day = date.getDate();
-      const month = date.getMonth();
+      const month = date.getMonth() + 1;
 
 
 
@@ -78,7 +78,7 @@ const NHLScores = (props) => {
       <title>NHL Scores</title>
       <h2>NHL</h2>
       {displayScores}
-      <img src={hockeyStadium} alt="hockey stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={hockeyStadium} alt="hockey stadium" style={{height: '100vh', position: 'absolute', bottom: '0', zIndex: '-1'}} /> 
     </div>
   )
 

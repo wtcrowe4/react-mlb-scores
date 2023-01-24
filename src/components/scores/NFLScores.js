@@ -32,7 +32,7 @@ const NFLScores = (props) => {
       //date not working
       const date = new Date(scoresArray.commence_time);
       const day = date.getDate();
-      const month = date.getMonth();
+      const month = date.getMonth() + 1;
       const game = scoreArray.scores
       if(game !== null) {
         return (
@@ -72,7 +72,7 @@ const NFLScores = (props) => {
     <div className="displayDiv">
       <h2>NFL</h2>
       {displayScores} 
-      <img src={nflStadium} alt="football stadium" style={{width: '100vw', position: 'absolute', zIndex: '-1'}} /> 
+      <img src={nflStadium} alt="football stadium" style={{height: '150vh', position: 'absolute', zIndex: '-1'}} /> 
     </div>
   )
   } else {
